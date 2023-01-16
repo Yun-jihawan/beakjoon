@@ -36,4 +36,32 @@ public class baekjoon_10844 {
         }
         return arr[depth][number]%1000000000;
     }
+
+    public static class backjoon2164 {
+        public static void main(String[] args)throws IOException{
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+            int[] list = new int[2000000];
+
+            int N = Integer.parseInt(bufferedReader.readLine());
+            for(int i=1;i<=N;i++){
+               list[i]=i;
+            }
+
+            int first = 1;
+            int end = N;
+            int change=0;
+
+            while(end-first!=0){
+                list[first]=0;
+                change = list[first+1];
+                first=first+2;
+                list[end+1]=change;
+                end++;
+            }
+
+            System.out.println(list[first]);
+
+
+        }
+    }
 }
